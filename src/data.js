@@ -189,8 +189,8 @@ export const listProyek = [
   {
     id: 8,
     gambar: Proyek8,
-    nama: "DASHBOARD LOG ANALIZER",
-    desk: "Website yang berfungsi untuk menganalisis log",
+    nama: "Script Port Scanner",
+    desk: "Script untuk analisis port melalui ip",
     tools: ["Python"],
     dad: "900",
     link: "https://github.com/Suryadhrma/Port-Scanner",
