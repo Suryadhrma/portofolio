@@ -1,50 +1,57 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
+
+const links = [
+  { href: "#beranda", label: "Beranda" },
+  { href: "#tentang", label: "Tentang" },
+  { href: "#proyek", label: "Proyek" },
+  { href: "#pengalaman", label: "Pengalaman" },
+  { href: "#kontak", label: "Kontak" },
+]
 
 const Navbar = () => {
-const[active, setActive] = useState(false);
-
-    useEffect(()=>{
-        const handleScroll = () => {
-            if (window.scrollY > 150 ){
-                setActive(true);
-            }
-            else {
-                setActive(false);
-            }
-        }
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-        window.removeEventListener("scroll", handleScroll)
-    }
-  }, []);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="navbar py-7 flex items-center justify-between">
-      <div className="logo">
-        <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white">Portofolio</h1>
+    <header className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-zinc-800">
+      <div className="container mx-auto px-4 flex items-center justify-between h-16">
+        <h1 className="text-xl font-semibold">Portofolio</h1>
+
+        <ul className="hidden md:flex items-center gap-8">
+          {links.map((link) => (
+            <li key={link.href}>
+              <a className="text-sm font-medium text-zinc-300 hover:text-cyan-400 transition-colors duration-200" href={link.href}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          className="md:hidden text-2xl text-zinc-200"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
+          aria-expanded={menuOpen}
+        >
+          <i className={menuOpen ? "ri-close-line" : "ri-menu-line"}></i>
+        </button>
       </div>
-      <ul className={`menu flex items-center sm:gap-10 gap-4 md:static fixed left-1/2
-        -translate-x-1/2 md:translate-x-0 md:opacity-100 bg-white/30 backdrop-blur-md p-4
-        rounded-br-2xl rounded-bl-2xl md:bg-transparent transition-all md:transform-none z-40
-         ${active ? "top-0 opacity-100" : "-top-10 opacity-0"
 
-         }`}>
-
-        <li>
-          <a className="sm:text-lg text-base font-medium" href="#beranda">Beranda</a>
-        </li>
-        <li>
-          <a className="sm:text-lg text-base font-medium" href="#tentang">Tentang</a>
-        </li>
-        <li>
-          <a className="sm:text-lg text-base font-medium" href="#proyek">Proyek</a>
-        </li>
-        <li>
-          <a className="sm:text-lg text-base font-medium" href="#kontank">Kontak</a>
-        </li>
-      </ul>
-    </div>
+      {menuOpen && (
+        <ul className="md:hidden border-t border-zinc-800 bg-black px-4 py-4 flex flex-col gap-4">
+          {links.map((link) => (
+            <li key={link.href}>
+              <a
+                className="block text-base font-medium text-zinc-300 hover:text-cyan-400 transition-colors duration-200"
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </header>
   )
 }
 

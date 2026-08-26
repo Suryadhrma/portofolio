@@ -1,11 +1,32 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-zinc-900 text-white;
+  @apply bg-black text-zinc-200;
 }
 
 @layer base{
   body{
-    font-family: "Poppins", sans-serif;
+    font-family: "Geist", sans-serif;
+  }
+  a, button, input, textarea {
+    outline-offset: 2px;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid theme(colors.cyan.400);
+  }
+}
+
+@layer utilities {
+  .font-mono-tag {
+    font-family: "Geist Mono", monospace;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
