@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const tagClass = "font-mono-tag text-xs px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-300";
-const cardClass = "p-5 bg-zinc-950 border border-zinc-800 rounded-2xl hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300";
+const cardClass = "flex flex-col p-5 bg-zinc-950 border border-zinc-800 rounded-2xl hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_0_40px_-15px_rgba(34,211,238,0.35)] transition-all duration-300";
 const primaryBtn = "inline-flex items-center justify-center gap-2 bg-zinc-200 text-zinc-950 font-medium px-5 py-2.5 rounded-full hover:bg-white transition-colors duration-200";
 const disabledBtn = "inline-flex items-center justify-center gap-2 bg-zinc-900 text-zinc-600 font-medium px-5 py-2.5 rounded-full border border-zinc-800 cursor-not-allowed";
 const eyebrow = "font-mono-tag text-cyan-400 text-sm tracking-widest uppercase mb-3";
@@ -13,8 +13,10 @@ const sectionHeading = "text-4xl font-medium tracking-tight mb-2";
 function App() {
   return (
     <>
-    <div className="hero grid md:grid-cols-2 pt-6 md:pt-10 items-center xl:gap-0 gap-8 grid-cols-1" id="beranda">
-      <div className="animate__animated animate__fadeInUp animate__delay-3s">
+    <div className="hero relative grid md:grid-cols-2 pt-6 md:pt-10 items-center xl:gap-0 gap-8 grid-cols-1" id="beranda">
+      <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-24 w-80 h-80 sm:w-96 sm:h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+      <div aria-hidden="true" className="pointer-events-none absolute top-10 -right-16 w-80 h-80 sm:w-96 sm:h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+      <div className="relative z-10 animate__animated animate__fadeInUp animate__delay-3s">
         <div className="inline-flex items-center gap-3 mb-6 bg-zinc-950 border border-zinc-800 w-fit px-4 py-2 rounded-full">
           <img src={DataImage.fotoguwe} alt="Foto profil Surya"  loading="lazy" className="w-8 h-8 object-cover rounded-full" />
           <q className="text-sm text-zinc-300">Lets Colaborate 🔥</q>
@@ -39,7 +41,7 @@ function App() {
         </div>
 
       </div>
-      <img src={DataImage.fotoguwe} alt="Foto profil Surya"  loading="lazy" className="w-full max-w-[420px] mx-auto md:mx-0 md:ml-auto rounded-2xl
+      <img src={DataImage.fotoguwe} alt="Foto profil Surya"  loading="lazy" className="relative z-10 w-56 h-56 sm:w-72 sm:h-72 mx-auto md:mx-0 md:ml-auto rounded-full object-cover border border-zinc-800
       animate__animated animate__fadeInUp animate__delay-4s"/>
     </div>
 
@@ -123,7 +125,7 @@ function App() {
             <h1 className="text-xl font-semibold mb-2">
               {proyek.nama}
             </h1>
-            <p className="text-sm text-zinc-400 mb-4">
+            <p className="text-sm text-zinc-400 mb-4 flex-1">
               {proyek.desk}
             </p>
             <div className="flex flex-wrap gap-2 mb-5">
