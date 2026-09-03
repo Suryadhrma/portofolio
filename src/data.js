@@ -105,6 +105,7 @@ import Proyek4Chick from "/assets/proyek/4chick.png";
 import ProyekAirport from "/assets/proyek/airport_system.png";
 import ProyekHotel from "/assets/proyek/hotman.jpg";
 import ProyekSecondShp from "/assets/proyek/design.jpg";
+import ProyekRinci from "/assets/proyek/Rinci.jpg";
 
 export const listProyek = [
   {
@@ -169,6 +170,15 @@ export const listProyek = [
     tools: ["Figma"],
     dad: "800",
     link: "https://www.figma.com/design/sPD0GScdyT5O1cMzbXXzEe/Secondshpp?node-id=0-1&t=5DvwkiLUhTHywaFI-1",
+  },
+  {
+    id: 8,
+    gambar: ProyekRinci,
+    nama: "Rinci",
+    desk: "Mengubah dokumen bisnis yang berantakan — struk, invoice, hasil scan — jadi data terstruktur masih dikerjakan manual dan rawan salah. Saya membangun backend service ekstraksi dokumen (masih dalam pengembangan) dengan NestJS yang memakai Gemini API untuk parsing, dilengkapi antrian job, dashboard evaluasi akurasi per field, dan alur review manual untuk hasil dengan confidence rendah — diuji pada dataset CORD-v2 dengan akurasi 90.1%.",
+    tools: ["NestJS", "TypeScript", "Prisma", "PostgreSQL", "Redis", "Gemini API"],
+    dad: "900",
+    link: "https://github.com/Suryadhrma/Rinci",
   },
 ];
 
