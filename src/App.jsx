@@ -119,10 +119,11 @@ function App() {
       </p>
 
       <div className="proyek-box grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4" data-aos="fade-up">
-        {listProyek.map((proyek) => (
-          <div className={cardClass} key={proyek.id}>
-            <img src={proyek.gambar} alt={proyek.nama} loading="lazy" className="w-full aspect-video object-cover rounded-xl mb-4"/>
-            <h1 className="text-xl font-semibold mb-2">
+        {listProyek.map((proyek, i) => (
+          <div className={`${cardClass} ${i === 0 ? "lg:col-span-2" : ""}`} key={proyek.id}>
+            {i === 0 && <p className={eyebrow}>// terbaru</p>}
+            <img src={proyek.gambar} alt={proyek.nama} loading="lazy" className={`w-full object-cover rounded-xl mb-4 ${i === 0 ? "aspect-[21/9]" : "aspect-video"}`}/>
+            <h1 className={`font-semibold mb-2 ${i === 0 ? "text-2xl" : "text-xl"}`}>
               {proyek.nama}
             </h1>
             <p className="text-sm text-zinc-400 mb-4 flex-1">
