@@ -16,7 +16,7 @@ function App() {
     <div className="hero relative grid md:grid-cols-2 pt-6 md:pt-10 items-center xl:gap-0 gap-8 grid-cols-1" id="beranda">
       <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-24 w-80 h-80 sm:w-96 sm:h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
       <div aria-hidden="true" className="pointer-events-none absolute top-10 -right-16 w-80 h-80 sm:w-96 sm:h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
-      <div className="relative z-10 animate__animated animate__fadeInUp animate__delay-3s">
+      <div className="relative z-10 animate__animated animate__fadeInUp">
         <div className="inline-flex items-center gap-3 mb-6 bg-zinc-950 border border-zinc-800 w-fit px-4 py-2 rounded-full">
           <img src={DataImage.fotoguwe} alt="Foto profil Surya"  loading="lazy" className="w-8 h-8 object-cover rounded-full" />
           <q className="text-sm text-zinc-300">Lets Colaborate 🔥</q>
@@ -42,7 +42,7 @@ function App() {
 
       </div>
       <img src={DataImage.fotoguwe} alt="Foto profil Surya"  loading="lazy" className="relative z-10 w-56 h-56 sm:w-72 sm:h-72 mx-auto md:mx-0 md:ml-auto rounded-full object-cover border border-zinc-800
-      animate__animated animate__fadeInUp animate__delay-4s"/>
+      animate__animated animate__fadeInUp"/>
     </div>
 
     {/* Tentang */}
