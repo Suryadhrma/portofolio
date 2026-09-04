@@ -126,7 +126,7 @@ function App() {
             <h1 className={`font-semibold mb-2 ${i === 0 ? "text-2xl" : "text-xl"}`}>
               {proyek.nama}
             </h1>
-            <p className="text-sm text-zinc-400 mb-4 flex-1">
+            <p className="text-sm text-zinc-400 mb-4 flex-1 line-clamp-3">
               {proyek.desk}
             </p>
             <div className="flex flex-wrap gap-2 mb-5">
