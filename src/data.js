@@ -133,7 +133,7 @@ export const listProyek = [
     desk: "Peserta kelas Dicoding butuh cara cepat mengetahui pemahamannya di tiap sub-materi tanpa menunggu koreksi manual. Saya membangun fitur formative assessment yang jawabannya dikoreksi dan dievaluasi oleh AI, lalu peserta langsung mendapat feedback otomatis.",
     tools: ["React", "Node JS", "LLM"],
     dad: "400",
-    link: "https://learn-check-asah.vercel.app",
+    link: "https://github.com/Suryadhrma/LearnCheck_ASAH",
   },
   {
     id: 4,
